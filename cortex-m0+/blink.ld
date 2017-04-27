@@ -23,15 +23,4 @@ SECTIONS {
 
   } > flash
 
-  .data :
-  {
-    . = ALIGN(4);
-    _sdata = .;
-    *(.data)
-    *(.data*)
-
-    . = ALIGN(4);
-    _edata = .;
-  } > sram
-
 }
