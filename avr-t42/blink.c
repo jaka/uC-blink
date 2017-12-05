@@ -19,7 +19,6 @@ void setup(void)
 
 int main(void)
 {
-
   DDRD = _BV(PD5); /* pin 5 port D */
   setup();
 

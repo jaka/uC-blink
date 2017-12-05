@@ -2,12 +2,13 @@
 #include <avr/interrupt.h>
 #include <avr/sleep.h>
 
-ISR (TIMER0_OVF_vect) {
+ISR (TIMER0_OVF_vect)
+{
   PORTD ^= _BV(PD5);
 }
 
-void setup(void) {
-
+void setup(void)
+{
   TCCR0B |= _BV(CS02) | _BV(CS00);
 
   TCNT0 = 0;
@@ -16,8 +17,8 @@ void setup(void) {
   sei();
 }
 
-int main(void) {
-
+int main(void)
+{
   DDRD = _BV(PD5); /* pin 5 port D */
   setup();
 

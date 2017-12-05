@@ -19,7 +19,6 @@ void setup(void)
 
 int main(void)
 {
-
   DDRB = _BV(PB2); /* pin 2 port B */
   setup();
 

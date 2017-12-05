@@ -1,9 +1,5 @@
 #!/usr/bin/make -f
 
-NAME	= $(MCU_TARGET)-blink
-SRC	:= blink.c
-OBJ	:= $(patsubst %.c,%.o,$(SRC))
-
 OPTS	= -Os -mmcu=$(MCU_TARGET)
 CFLAGS	= -Wall -Werror -Wextra -pedantic -std=c99
 LDFLAS	=
@@ -12,9 +8,13 @@ LIBS	=
 CC	:= avr-gcc
 OBJCOPY	:= avr-objcopy
 
-MCU_TARGET	= atmega328p
-PROGRAMMER_MCU	= m328p
-PROGRAMMER	= usbasp
+MCU_TARGET	:= atmega328p
+PROGRAMMER_MCU	:= m328p
+PROGRAMMER	:= usbasp
+
+SRC	:= blink.c
+OBJ	:= $(patsubst %.c,%.o,$(SRC))
+NAME	= $(MCU_TARGET)-blink
 
 all: build
 
