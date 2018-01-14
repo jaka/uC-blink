@@ -16,14 +16,14 @@ SECTIONS {
 
   .vectors : 
   {
-    * (.vectors)
+    KEEP(*(.vectors))
   } > flash
 
   .text :
   {
     . = ALIGN(4);
-    * (.text)
-    * (.text*)
+    *(.text)
+    *(.text*)
   } > flash
 
 }

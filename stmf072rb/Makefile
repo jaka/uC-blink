@@ -1,6 +1,6 @@
 OPTS += -mlittle-endian -mthumb -mcpu=cortex-m0 
 CFLAGS += -O0 -Wall -Werror -Wextra -pedantic -std=c99 -ffunction-sections -fdata-sections -finline-functions
-LDFLAGS += -nostdlib 
+LDFLAGS += -nostdlib --gc-sections
 LIBS =
 
 PREFIX := arm-none-eabi
