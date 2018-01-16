@@ -1,5 +1,5 @@
 OPTS += -mlittle-endian -mthumb -mcpu=cortex-m0 
-CFLAGS += -O0 -Wall -Werror -Wextra -pedantic -std=c99 -ffunction-sections -fdata-sections -finline-functions
+CFLAGS += -g -O0 -Wall -Werror -Wextra -pedantic -std=c99 -ffunction-sections -fdata-sections -finline-functions
 LDFLAGS += -nostdlib --gc-sections
 LIBS =
 
@@ -27,6 +27,6 @@ flash: $(NAME).bin
 	st-flash write $(NAME).bin 0x8000000
 
 clean:
-	rm $(OBJ)
-	rm $(NAME).elf
-	rm $(NAME).bin
+	rm -f $(OBJ)
+	rm -f $(NAME).elf
+	rm -f $(NAME).bin

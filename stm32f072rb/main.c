@@ -12,7 +12,7 @@ void off(void) {
 
 int main(void)
 {
-  volatile unsigned int i;
+  volatile uint32_t i;
 
   *((uint32_t *)0x40021014) |= 0x20000;
   *((uint32_t *)0x48000000) |= 0x400;
